@@ -5,7 +5,7 @@ IOC_INSTANCE_PATH := $(shell pwd)
 # Set PRODUCTION_IOC to 1 to move from a testing to a production IOC:
 PRODUCTION_IOC := 0
 
-PROJECT_NAME := lcls-plc-113
+PROJECT_NAME := lcls_plc_113
 PROJECT_PATH := ../../lcls-plc-113/lcls-plc-113.tsproj
 PLC := tst_optics
 
