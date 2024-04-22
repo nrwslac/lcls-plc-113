@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="FB_TestTrigger" Id="{9c874e7e-d756-4f64-bde6-5fa058895c46}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_TestTrigger
+VAR_INPUT
+    bTestBool : BOOL ;
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+    rtRisingTrigger : r_trig;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[rtRisingTrigger(CLK:=bTestBool);]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="MAIN" Id="{2fb27e99-f448-43cc-be37-ad260877f38c}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+    {attribute 'TcLinkTo' := '.iRaw := TIIB[Term 3 (EL3202-0010)]^RTD Inputs Channel 1^Value'}
+    fbTempSensor : FB_TempSensor;
+    fTemp : LREAL;
+    
+    fbFlutterDet : FB_FlutterDetection;
+    bTestFlip : BOOL;
+
+    fbTrigTest : FB_TestTrigger;
+    
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[fbTempSensor(fResolution:=0.01);
+
+fTemp := fbTempSensor.fTemp;
+fTemp := (9.0/5.0) * fTemp + 32;
+
+fbFlutterDet(fPastTime:=T#5000ms, bVarToMonitor:=bTestFlip);
+//fbTrigTest(bTestBool:=bTestFlip);]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

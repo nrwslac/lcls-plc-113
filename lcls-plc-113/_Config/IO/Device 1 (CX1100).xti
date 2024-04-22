@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmItem" TcSmVersion="1.0" TcVersion="3.1.4022.30" ClassName="CDevBeckhoffCx1100Def" SubType="65">
+	<Device Id="1" DevType="65">
+		<Name>__FILENAME__</Name>
+		<DevData>00a00d00000030004245434b484f464600000000000000000043582031303030000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</DevData>
+		<Image Id="1" AddrType="5" ImageType="3">
+			<Name>Image</Name>
+		</Image>
+	</Device>
+</TcSmItem>
