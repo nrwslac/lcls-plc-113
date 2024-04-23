@@ -2,11 +2,17 @@
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <POU Name="MAIN" Id="{2fb27e99-f448-43cc-be37-ad260877f38c}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
-VAR
+VAR    
+    {attribute 'pytmc' := '
+        pv: RM113
+    '}
     {attribute 'TcLinkTo' := '.iRaw := TIIB[Term 3 (EL3202-0010)]^RTD Inputs Channel 1^Value'}
     fbTempSensor : FB_TempSensor;
     fTemp : LREAL;
     
+    {attribute 'pytmc' := '
+        pv: RM113
+    '}
     fbFlutterDet : FB_FlutterDetection;
     bTestFlip : BOOL;
 
