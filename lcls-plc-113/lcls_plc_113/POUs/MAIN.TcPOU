@@ -17,6 +17,12 @@ VAR
     bTestFlip : BOOL;
 
     fbTrigTest : FB_TestTrigger;
+
+    {attribute 'pytmc' := '
+        pv: RM113:TST:MMS:Y
+    '}
+    M1 : ST_MotionStage := (fVelocity:=100.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=True); // M1K2 Yleft
+    fbMotionStage_m1 : FB_MotionStage;
     
 END_VAR
 ]]></Declaration>
@@ -27,7 +33,9 @@ fTemp := fbTempSensor.fTemp;
 fTemp := (9.0/5.0) * fTemp + 32;
 
 fbFlutterDet(fPastTime:=T#5000ms, bVarToMonitor:=bTestFlip);
-//fbTrigTest(bTestBool:=bTestFlip);]]></ST>
+//fbTrigTest(bTestBool:=bTestFlip);
+
+fbMotionStage_m1(stMotionStage:=M1);]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
