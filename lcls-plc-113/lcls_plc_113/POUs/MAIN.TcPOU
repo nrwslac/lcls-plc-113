@@ -23,7 +23,11 @@ VAR
     '}
     M1 : ST_MotionStage := (fVelocity:=100.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=True); // M1K2 Yleft
     fbMotionStage_m1 : FB_MotionStage;
-    
+    {attribute 'pytmc' := '
+        pv: RM113:TST
+    '}
+    {attribute 'TcLinkTo' := '.iRaw := TIIB[Term 3 (EL3202-0010)]^RTD Inputs Channel 1^Value'}
+    fbFlowMeter : FB_FDQ_FlowMeter;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -35,7 +39,8 @@ fTemp := (9.0/5.0) * fTemp + 32;
 fbFlutterDet(fPastTime:=T#5000ms, bVarToMonitor:=bTestFlip);
 //fbTrigTest(bTestBool:=bTestFlip);
 
-fbMotionStage_m1(stMotionStage:=M1);]]></ST>
+fbMotionStage_m1(stMotionStage:=M1);
+fbFlowMeter();]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
